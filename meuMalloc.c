@@ -36,11 +36,11 @@ int main(){
     imprimeMapa();
     b=alocaMem(50);
     imprimeMapa();
-    liberaMem(a);
-    imprimeMapa();
-    a=alocaMem(50);
-    imprimeMapa();
     liberaMem(b);
+    imprimeMapa();
+    c=alocaMem(50);
+    imprimeMapa();
+    liberaMem(a);
     imprimeMapa();
     finalizaAlocador();
     /*printf("%p\n", topoInicialHeap);

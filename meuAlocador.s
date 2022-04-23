@@ -79,7 +79,7 @@ alocaMem:
     				movq %r12 , %r10	#r10 = num_bytes 
 	    			addq $16 , %r10		#r10 = numbaytes +16 
 	    			cmpq (%r8), %r10 		
-	    			jg elseif2			#if(a[1] > num_bytes + 16)
+	    			jge elseif2			#if(a[1] > num_bytes + 16)
 	    			#compra o segundo com o primeiro	
 	    			movq (%r8), %r9	#num_bytes_old 
 
@@ -117,7 +117,7 @@ alocaMem:
 					movq -8(%rbp), %r8
 					addq $8 ,%r8
 					cmpq (%r8), %r12
-					jge fimif2			#else if(a[1] >= num_bytes)
+					jg fimif2			#else if(a[1] >= num_bytes)
 
 					movq -8(%rbp), %r9
 					movq $1 , (%r9)		 #a[0] = 1;
