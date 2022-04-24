@@ -4,6 +4,8 @@
 extern void *topoInicialHeap;
 extern void *ponteiroAtual;
 
+
+
 void iniciaAlocador();
 void finalizaAlocador();
 void *alocaMem(long int);
