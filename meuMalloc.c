@@ -6,41 +6,35 @@
 extern void *topoInicialHeap;
 extern void *ponteiroAtual;
  
-/* void imprimeMapa(){
-    char c;
-    long int *a = topoInicialHeap;
-    void *topoAtual = achabrk();
-    while(a != topoAtual){
-        printf("################");
-        if(a[0] == 1)
-            c = '+';
-        else
-            c = '-';
-        for(int i = 0; i < a[1]; i++)
-            putchar(c);
-
-        a = (void*)a + 16 + (a[1]);
-    }
-    putchar('\n');
-}*/
-
 int main(){
     printf("meu malloc totalmente original 100 por cento, confia\n");
     fflush(stdout);
     iniciaAlocador();
-    void *a,*b ,*c;
+    void *a,*b ,*c, *d, *e;
 
     iniciaAlocador();
     imprimeMapa();
     a=alocaMem(240);
     imprimeMapa();
-    b=alocaMem(50);
+    b=alocaMem(240);
     imprimeMapa();
-    liberaMem(b);
+    liberaMem(a);
     imprimeMapa();
     c=alocaMem(50);
     imprimeMapa();
-    liberaMem(a);
+    //liberaMem(a);
+    //imprimeMapa();
+    a=alocaMem(50);
+    imprimeMapa();
+    d=alocaMem(300);
+    imprimeMapa();
+    liberaMem(b);
+    imprimeMapa();
+    e=alocaMem(50);
+    imprimeMapa();
+    liberaMem(c);
+    imprimeMapa();
+    c=alocaMem(50);
     imprimeMapa();
     finalizaAlocador();
     /*printf("%p\n", topoInicialHeap);

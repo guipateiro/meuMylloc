@@ -285,6 +285,7 @@ liberaMem:
 
 	movq -8(%rbp), %r10
 	movq $0 , %r10
+	#movq %r10, -8(%rbp)
 
 	addq $32 ,%rsp
 
@@ -360,6 +361,8 @@ imprimeMapa:
 
     fimwhile4:	
 
+    movq newlineChar, %rdi	# c = '\n'
+    call putchar			#putchar('\n')
     movq newlineChar, %rdi	# c = '\n'
     call putchar			#putchar('\n')
 
