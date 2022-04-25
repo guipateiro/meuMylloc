@@ -57,7 +57,13 @@ int liberaMem(void *endereco){
     while(b != topoAtual && a != topoAtual){
         if(a[0] == 0 && b[0] == 0){
             a[1] += b[1] + 16;
-            b = (void*)b + 16 + b[1];   
+            if(ponteiroAtual == b)
+                ponteiroAtual = a;
+            b = (void*)b + 16 + b[1];
+            if(a[0] == 0 && b[0] == 0 && b != topoAtual){
+                a[1] += b[1] + 16;
+                b = (void*)b + 16 + b[1];
+            } 
         } 
         b = (void*)b + 16 + b[1];   
         a = (void*)a + 16 + a[1];

@@ -231,6 +231,16 @@ liberaMem:
 			addq $16 , %r10
 			addq %r10 , (%r8)	#a[1] += b[1] + 16;
 
+			if3_5:
+				movq -32(%rbp), %r8
+				cmpq ponteiroAtual, %r8
+				jne fimif3_5
+
+				movq -16(%rbp) , %r8 
+				movq %r8, ponteiroAtual
+
+			fimif3_5:
+
 			movq -32(%rbp),%r10
 			addq (%r9), %r10
 			addq $16, %r10
