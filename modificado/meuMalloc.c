@@ -17,10 +17,11 @@ int main(){
     printf("case 2: perda de ponteiro(desalocaçao de ponteiro atual)\n");
     printf("case 3: nextfit (verifica se o next fit esta funcionando)\n");
     printf("case 4: EU QUERO VER O CIRCO PEGANDO FOGO(5 MINUTOS NO INFERNO)\n");
-    printf("digite um numero entre 1 e 4 \n");
+    printf("case 5: um caso onde o nosso programa não deveria funcionar (double free)\n");
+    printf("digite um numero entre 1 e 5 \n");
     int input;
     scanf("%i", &input);
-    //input = (input-1 % 4); 
+    input = (input-1 % 5); 
     iniciaAlocador();
     void *a,*b ,*c, *d, *e, *f; 
     int *coisa[50];
@@ -163,7 +164,7 @@ int main(){
                     imprimeMapa();
                 }
             }
-            if (op == 1){
+            if (op == 0){
                 k = (rand() % 50);
                 if (coisa[k] != NULL){
                     int size = liberaMem(coisa[k]);
@@ -179,19 +180,19 @@ int main(){
 
     case 4:
         c=alocaMem(50);
-        printf("aqui tem 50 \n");
+        printf("aqui tem c = 50 \n");
         fflush(stdout); 
         imprimeMapa();
         liberaMem(c);
-        printf("aqui liberamos 240 \n");
+        printf("aqui liberamos c= 50 \n");
         fflush(stdout); 
         imprimeMapa();
         a=alocaMem(20);
-        printf("aqui tem 50 \n");
+        printf("aqui tem a = 20 \n");
         fflush(stdout); 
         imprimeMapa();
         liberaMem(c);
-        printf("aqui liberamos 240 \n");
+        printf("aqui liberamos c de novo \n");
         fflush(stdout); 
         imprimeMapa();
     break; 
